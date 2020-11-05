@@ -6,28 +6,33 @@ import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, } 
 const Main = (props) => {
 
   const fetchData_Then = () => {
-    let myData = []
-
     console.log("starting fetch...")
 
     axios.get('https://jsonplaceholder.typicode.com/users')
       .then((response) => {
         console.log(response);
-        myData = response.data;
       })
-    console.log(myData);
     console.log("end fetch....")
-
   }
+
+  const fetchData_Await = async () => {
+    console.log("starting fetch....");
+
+    const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+
+    console.log(response);
+    console.log("end await fetch");
+  }
+
   return (
     <SafeAreaView>
       <View>
         <Text>Main</Text>
-        <Button title="Fetch Data" onPress={fetchData_Then} />
+        <Button title="Fetch Data with Then" onPress={fetchData_Then} />
+        <Button title="Fetch Data with Await" onPress={fetchData_Await} />
       </View>
     </SafeAreaView>
   );
 }
-
 
 export default Main;
