@@ -16,6 +16,7 @@ https://jsonplaceholder.typicode.com/
     "axios" kullanarak import yapıyoruz
 
     import axios from 'axios';
+import { Component } from 'react'
 
 7. GET => veri isteginde bulunmak için
 POST => veri istegi ve veri gönderme
@@ -33,6 +34,25 @@ const fetchData = () => {
             console.log(error);
         })
 }
+---------------------------------------------------------------------------------------
 
-1h.40m
+    örnek API uygulaması;
 
+1. temel bir main file olusturuyoruz.
+
+2. ayrı bir button Component olusturuyoruz  ve style veriyoruz
+
+3. 'main'e button'u ekliyoruz.
+
+4. " https://random-data-api.com/api/restaurant/random_restaurant " sitesinden çekeceğimiz verileri
+ayrı bir card Component olusturarak o Component'a çekeceğiz.
+
+5. "RestaurantCard" adında yeni bir Component olusturuyoruz.
+
+6. her iki export etmek için "index.js" oluştutuyoruz.
+✍  export * from './Button';
+export * from './RestourantCard';
+
+7. artık "RestaurantCard" üzerinden geliştirmeleri yapacağız.
+
+8. 
