@@ -1,0 +1,38 @@
+const { Button } = require("react-native")
+
+1. https://github.com/axios/axios 
+-> npm install axios
+
+2. uygulamada veri alma ve gönderme işlemlerini "web-API" ile yapıyoruz.alma
+
+3. örnek veri çekeceğimiz bir site;
+https://jsonplaceholder.typicode.com/
+
+4. şimdi uygulama ile veri nasıl çekileceğin e bakalım;
+
+5. axios kütüphanesi ile GET işlemi yapıyoruz
+
+6. "main" e Button ekliyoruz.
+    "axios" kullanarak import yapıyoruz
+
+    import axios from 'axios';
+
+7. GET => veri isteginde bulunmak için
+POST => veri istegi ve veri gönderme
+
+8. "get" 2 ayrı ...sı var ;
+".then"=> server'dan cevap aldığında veri aktarımı sağlar,
+".catch" => server'da hata olduğında ikaz eder. 
+
+const fetchData = () => {
+    axios.get('https://jsonplaceholder.typicode.com/users')
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+}
+
+
+
